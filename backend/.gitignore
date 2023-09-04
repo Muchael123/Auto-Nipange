@@ -2,7 +2,8 @@ db.sqlite3
 __pycache__/
 *.pyc
 *.pyo
-myenv/
+\myenv
+C:\Users\Public\Documents\joe\Auto-Nipange\backend\myenv
 env/
 *.log
 logs/
