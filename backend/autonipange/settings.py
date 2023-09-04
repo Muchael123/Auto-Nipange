@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'autonipange.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'autonipange',
-        'PASSWORD' : '',
-        'USER' : 'root',
-        'HOST' : 'localhost',
-        'PORT' : '3306',
+        'USER': 'root1',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
