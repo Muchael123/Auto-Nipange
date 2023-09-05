@@ -1,12 +1,12 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import User, Transaction, Group, Plan
+from .models import Users, Transaction, Group, Plan
 
 
 class UserSerializer(ModelSerializer):
     class Meta:
-        model = User
-        fields = ['userId','phoneNo','email','name','balance']
+        model = Users
+        fields = ['userId','phoneNo','email','name','balance',"password"]
 
 
 class TransactionSerializer(ModelSerializer):

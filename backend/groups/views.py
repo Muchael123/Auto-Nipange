@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from nipangeapp.models import User,Group
+from nipangeapp.models import Users,Group
 from nipangeapp.serializers import GroupSerializer
 
 # Create your views here.

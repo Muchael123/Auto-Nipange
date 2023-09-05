@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
 # Create your models here.
@@ -38,11 +38,12 @@ class GroupID(models.CharField):
 
 
 
-class User(User):
+class Users(AbstractUser):
     userId = models.UUIDField(default=uuid.uuid4, primary_key=True,editable=False,unique=True)
     phoneNo = models.CharField(max_length=15)
     name = models.CharField(max_length=15 ,default= '')
     balance = models.FloatField(default=0.0)
+    
 
     def __str__(self):
         return self.first_name
@@ -51,7 +52,7 @@ class User(User):
 class Transaction(models.Model):
     txid = TransactionID(primary_key=True,editable=False)
     txdate = models.DateTimeField(auto_now=True)
-    userId = models.ForeignKey(User, on_delete=models.CASCADE)  
+    userId = models.ForeignKey(Users, on_delete=models.CASCADE)  
 
     def __str__(self) -> str:
         return self.txid
@@ -71,7 +72,7 @@ class Group(models.Model):
     planId = models.ForeignKey(Plan, on_delete=models.CASCADE)
     users = models.CharField(max_length=200,default=None)
     phone_number = models.CharField(max_length=15,default=None)
-    admin = models.ForeignKey(User, on_delete=models.CASCADE)
+    admin = models.ForeignKey(Users, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.groupName

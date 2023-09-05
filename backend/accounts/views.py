@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from nipangeapp.models import User
+from nipangeapp.models import Users
 from nipangeapp.serializers import UserSerializer
 
 # Create your views here.

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 
 from rest_framework.response import Response
-from nipangeapp.models import User
+from nipangeapp.models import Users
 from nipangeapp.serializers import UserSerializer
 
 @api_view(['POST'])
@@ -19,7 +19,7 @@ def register(request):
 @api_view(['POST'])
 def login(request):
     user = request.data
-    user = User.objects.filter(email=user['email'],password=user['password'])
+    user = Users.objects.filter(email=user['email'],password=user['password'])
     if user:
         print(user)
         return Response({"mess":"successfully logged in"})
@@ -32,7 +32,7 @@ def logout(request):
 @api_view(['PUT'])
 def forgot_password(request):
     data = request.data
-    if User.email == data['email']:
+    if Users.email == data['email']:
         pass
 
 
