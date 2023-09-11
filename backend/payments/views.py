@@ -1,6 +1,5 @@
 from django.shortcuts import render
+from rest_framework.decorators import api_view
 
-
-from nipangeapp.models import User,Transaction
-from nipangeapp.serializers import UserSerializer,TransactionSerializer
 # Create your views here.
+

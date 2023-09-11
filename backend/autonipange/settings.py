@@ -21,13 +21,12 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #autonipange apps
-    'transaction',
-    'accounts',
-    'plans',
+    
     'payments',
-    'airtimepurchase',  
-    'nipangeapp',
-]
+    'purchaseairtime',
+    'groups',
+    'users',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +62,17 @@ WSGI_APPLICATION = 'autonipange.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Testdb',
+        'PASSWORD' : '',
+        'USER' : 'root',
+        'HOST' : 'localhost',
+        'PORT' : '3306',
+        
+    }
+}
 
 
 # Password validation
@@ -106,47 +115,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# The Mpesa environment to use
-# Possible values: sandbox, production
-
-MPESA_ENVIRONMENT = 'sandbox'
-
-# Credentials for the daraja app
-
-MPESA_CONSUMER_KEY = 'bbpQWRspiDbWhR7ifk75htVWo6lynvD7'
-MPESA_CONSUMER_SECRET = 'P3j7sb97u8ucYAhw'
-
-#Shortcode to use for transactions. For sandbox  use the Shortcode 1 provided on test credentials page
-
-MPESA_SHORTCODE = '174379'
-
-# Shortcode to use for Lipa na MPESA Online (MPESA Express) transactions
-# This is only used on sandbox, do not set this variable in production
-# For sandbox use the Lipa na MPESA Online Shorcode provided on test credentials page
-
-MPESA_EXPRESS_SHORTCODE = '174379'
-
-# Type of shortcode
-# Possible values:
-# - paybill (For Paybill)
-# - till_number (For Buy Goods Till Number)
-
-MPESA_SHORTCODE_TYPE = 'paybill'
-
-# Lipa na MPESA Online passkey
-# Sandbox passkey is available on test credentials page
-# Production passkey is sent via email once you go live
-
-MPESA_PASSKEY = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
-
-# Username for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
-
-MPESA_INITIATOR_USERNAME = 'Auto-Nipange'
-
-# Plaintext password for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
-
-MPESA_INITIATOR_SECURITY_CREDENTIAL = 'Safaricom999!*!'
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
