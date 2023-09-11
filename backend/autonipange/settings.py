@@ -41,13 +41,12 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #autonipange apps
-    'transaction',
-    'accounts',
-    'plans',
+    
     'payments',
-    'airtimepurchase',  
-    'nipangeapp',
-]
+    'purchaseairtime',
+    'groups',
+    'users',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,12 +84,12 @@ WSGI_APPLICATION = 'autonipange.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'oyaybanw',
-        'PASSWORD' : 'C9lkYCN53eTYtlHp8XXiONwlP1EoE3pm',
-        'USER' : 'oyaybanw',
-        'HOST' : 'mahmud.db.elephantsql.com',
-        # 'PORT' : '3306',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Testdb',
+        'PASSWORD' : '',
+        'USER' : 'root',
+        'HOST' : 'localhost',
+        'PORT' : '3306',
         
     }
 }
@@ -137,4 +136,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'nipangeapp.Users'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'omoshjoe02@gmail.com'
+EMAIL_HOST_PASSWORD = 'Mikiejoe02'
