@@ -11,13 +11,15 @@
     android:gravity="center"
     android:background="@color/primary_dark"
     android:layout_gravity="center">
-    <ImageView android:layout_width="300dp" android:layout_height="300dp"
+    <ImageView android:layout_width="230dp" android:layout_height="230dp"
       android:src="@drawable/ic_launcher" android:scaleType="centerCrop" />
     <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Welcome To Autonipange"
+      android:textSize="20sp"
       android:textAllCaps="true"
+      android:textFontWeight="900"
       android:layout_marginTop="40dp"
       android:textColor="#fff" />
   </LinearLayout>

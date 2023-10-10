@@ -313,6 +313,7 @@ const Register = props => {
               />
             }
             placeholder="Enter email..."
+            keyboardType="email-address"
           />
         </View>
         <View
@@ -348,7 +349,7 @@ const Register = props => {
               />
             }
             placeholder="Enter phone number..."
-            keyboardType="numeric"
+            keyboardType="phone-pad"
           />
         </View>
         <View
@@ -605,7 +606,6 @@ const Register = props => {
             t.flex,
             t.justifyCenter,
             t.alignCenter,
-            t.bgBlue500,
             t.pL10,
             t.pR10,
 
@@ -615,6 +615,7 @@ const Register = props => {
               borderRadius: 10,
               marginTop: 30,
               elevation: 8,
+              backgroundColor: '#51954a',
               gap: 8,
             },
           ]}>
