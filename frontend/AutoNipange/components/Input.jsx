@@ -66,6 +66,7 @@ const Input = props => {
         placeholder={props.placeholder}
         placeholderTextColor={'#333'}
         keyboardType={props.keyboardType}
+        // keyboardType='phone-pad'
         secureTextEntry={props.isPassword}
       />
       {props.error && (

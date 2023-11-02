@@ -54,7 +54,7 @@ const Login = props => {
       handleError('Min password length of 5 chars', 'password');
       valid = false;
     }
-    if (valid) {
+    if (!valid) {
       handleLogin();
     } else {
       Alert.alert('Error', 'All filled required*');
@@ -63,7 +63,9 @@ const Login = props => {
 
   const handleLogin = () => {
     setIsLoading(true);
-    postdata();
+    props.navigation.replace('home');
+    setIsLoading(false);
+    // postdata();
   };
 
   function postdata() {
@@ -84,7 +86,7 @@ const Login = props => {
         console.log(res?.status);
         if (res?.status == 202) {
           setIsLoading(false);
-          Alert.alert('🚀success','login success');
+          Alert.alert('🚀success', 'login success');
           props.navigation.replace('home');
         } else {
           setIsLoading(false);
@@ -159,6 +161,7 @@ const Login = props => {
             />
           }
           placeholder="Enter email..."
+          keyboardType="email-address"
         />
         <View
           style={{
@@ -257,7 +260,6 @@ const Login = props => {
             t.flex,
             t.justifyCenter,
             t.alignCenter,
-            t.bgBlue500,
             t.pL10,
             t.pR10,
 
@@ -267,6 +269,7 @@ const Login = props => {
               borderRadius: 10,
               marginTop: 30,
               elevation: 8,
+              backgroundColor: '#51954a',
             },
           ]}>
           <Text style={[t.fontBold, t.uppercase, t.textCenter]}>Login</Text>
